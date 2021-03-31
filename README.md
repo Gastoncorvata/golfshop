@@ -1,7 +1,7 @@
 # GOLF SHOP 
 
 
-## Ecommerce ReactJs 
+## _Ecommerce ReactJs_ 
 
 > Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,6 +9,7 @@
  > Este proyecto tiene la finalidad de ser usado como Ecommerce de productos relacionados al golf.
  > Fue creado con fines educativos, durante el aprendizaje del curso de ReactJs en [CoderHouse](https://www.coderhouse.com/)
 
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://)
 ##  Funcionalidades terminadas:
 
 - Filtrar productos segun categorias, tres en total (Clubs, Bags y Accessories).
