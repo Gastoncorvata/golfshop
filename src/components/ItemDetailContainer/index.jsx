@@ -24,7 +24,7 @@ export default function ItemDetailContainer() {
 
     return (
         <fragment>
-            <h2 className="text-4xl text-center text-amber-500"> Este es el Item {itemId}</h2>
+            <h2 className="text-2xl text-center text-amber-500">Vas a comprar <spam className="font-light italic text-teal-500"> {item.title} {item.marca} </spam> por una cantidad de : </h2>
             <ItemDetail item={item} />
         </fragment>
     );

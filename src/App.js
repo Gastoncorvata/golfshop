@@ -25,7 +25,9 @@ function App() {
 					</Route>
 
 					<Route path="*">
-						<img src="https://image.freepik.com/vector-gratis/pagina-error-404-distorsion_23-2148105404.jpg" alt="Page not found" />
+						<div className="bg-blueGray-800 flex justify-center w-auto">
+							<img src="https://images.unsplash.com/photo-1583077956273-7d4a69ab8e33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Page not found" className="h-auto w-10/12" />
+						</div>
 					</Route>
 
 				</Switch>				

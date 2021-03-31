@@ -5,12 +5,20 @@ export function ItemCount ({stock, inicio, onAdd}){
     const [count, setCount] = useState (inicio);
 
     const sumar = () => {
+        console.log("sumar")
         setCount (count +1);
     };
 
     const restar = () => {
+        console.log("restar")
         setCount (count -1);
     };
+
+    const agregar = () => {
+        console.log ("agregar");
+    onAdd(count);
+    };
+
 
     return (
         <div className="flex flex-col items-center justify-center ">
@@ -40,11 +48,9 @@ export function ItemCount ({stock, inicio, onAdd}){
                 <Link to="/">
                     <button className="border border-gray-200 flex h-10 items-center justify-center p-1 rounded w-auto" type="submit">Home</button>
                 </Link>
-                <Link to="/cart">
                     <button 
-                    disabled={count >= 1}
-                    onClick= { ()=> onAdd( count )}  
-                    className="w-1/2 flex items-center justify-center border border-gray-200 bg-green-500 text-white hover:shadow-lg mx-4 rounded" type="button">Add to Cart</button></Link>
+                    onClick= { agregar }  
+                    className="w-1/2 flex items-center justify-center border border-gray-200 bg-green-500 text-white hover:shadow-lg mx-4 rounded px-2" >Add to Cart</button>
                 </div>
                 <button className="flex-none flex items-center justify-centerw-12 w-12 text-emerald-500 text-2xl p-1 " type="button" aria-label="like">
                     <a href="https://wa.me/?text=Mira%20Oferton!%20https://www.golfshop.com/itemcompartido" target="_blank" rel="noreferrer">
