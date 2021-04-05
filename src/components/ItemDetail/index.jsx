@@ -24,7 +24,7 @@ const sumar = (contador)=>{
                         {item?.title}
                     </h1>
                     <div className="text-lg leading-6 text-black">
-                        ${item?.price}
+                        $  {item?.price}
                     </div>
                     <div className="text-sm text-gray-500 ml-3">
                         {item?.stock} In stock Now
