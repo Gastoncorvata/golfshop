@@ -1,5 +1,6 @@
 import React from 'react'
 import { Item } from '../Item'
+import "./estilo.css";
 
 
 export const ItemList = ({items=[]}) => {

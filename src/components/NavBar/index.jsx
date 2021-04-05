@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from "../CartWidget";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -9,10 +9,10 @@ export default function Navbar({ fixed }) {
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-green-500 mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <Link exact to="/"
+            <NavLink to="/"
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-1 whitespace-no-wrap text-white"
               href="#inicio"
-            ><i className="fas fa-golf-ball"></i>  GOLF  Shop </Link>
+            ><i className="fas fa-golf-ball"></i>  GOLF  Shop </NavLink>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
