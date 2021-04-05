@@ -24,13 +24,13 @@ useEffect(() => {
     promesa.then((resultado) => {
         setItems(resultado);
     });
-},[]);
+},[categoryId]);
 
 
     return (
 
-        <fragment>
+        <>
             <ItemList items={items}/>
-        </fragment>
+        </>
     );
 }

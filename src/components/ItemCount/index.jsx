@@ -5,17 +5,14 @@ export function ItemCount ({stock, inicio, onAdd}){
     const [count, setCount] = useState (inicio);
 
     const sumar = () => {
-        console.log("sumar")
         setCount (count +1);
     };
 
     const restar = () => {
-        console.log("restar")
         setCount (count -1);
     };
 
     const agregar = () => {
-        console.log ("agregar");
     onAdd(count);
     };
 

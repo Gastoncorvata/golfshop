@@ -3,7 +3,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Home from "./components/Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import 'react-slideshow-image/dist/styles.css';
+
 
 function App() {
 	return (
@@ -17,7 +17,7 @@ function App() {
 					</Route>
 
 					<Route path="/category/:categoryId">
-						<ItemListContainer greeting="Bienvenidos"/>
+						<ItemListContainer />
 					</Route>
 
 					<Route path="/item/:itemId">
