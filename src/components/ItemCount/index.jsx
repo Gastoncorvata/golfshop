@@ -46,11 +46,11 @@ export function ItemCount ({stock, inicio, onAdd}){
             <div className="flex space-x-3 mb-3 text-sm font-semibold uppercase">
                 <div className="flex-auto flex space-x-3">
                 <Link to="/">
-                    <button className="border border-gray-200 flex h-10 items-center justify-center p-1 rounded w-auto" type="submit">Home</button>
+                    <button className="border border-gray-200 flex h-10 hover:bg-blueGray-400 items-center justify-center p-1 rounded w-auto" type="submit">Home</button>
                 </Link>
                     <button 
                     onClick= { agregar }  
-                    className="w-1/2 flex items-center justify-center border border-gray-200 bg-green-500 text-white hover:shadow-lg mx-4 rounded px-2" >Add to Cart</button>
+                    className="w-1/2 flex items-center justify-center border border-gray-200 bg-green-500 text-white hover:shadow-lg hover:bg-blueGray-400 mx-4 rounded px-2" >Add to Cart</button>
                 </div>
                 <button className="flex-none flex items-center justify-centerw-12 w-12 text-emerald-500 text-2xl p-1 " type="button" aria-label="like">
                     <a href="https://wa.me/?text=Mira%20Oferton!%20https://www.golfshop.com/itemcompartido" target="_blank" rel="noreferrer">

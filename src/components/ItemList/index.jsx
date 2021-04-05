@@ -6,7 +6,7 @@ export const ItemList = ({items=[]}) => {
 
 
     return (
-        <div className="grid justify-center">
+        <div className="card-item">
             {items.map(item => <Item item={item}/> )}
         </div>
     )

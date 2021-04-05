@@ -20,7 +20,7 @@ export default function ItemDetailContainer() {
     promesa.then((product) => {
     setItem(product);
     });
-    },);
+    },[]);
 
     return (
         <fragment>
