@@ -3,10 +3,11 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Home from "./components/Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import { CartProvider } from "./Context/CartContext";
 
 function App() {
 	return (
+	<CartProvider>
 		<BrowserRouter>
 			<div>
 				<NavBar />
@@ -30,10 +31,10 @@ function App() {
 						</div>
 					</Route>
 
-				</Switch>				
+				</Switch>
 			</div>
 		</BrowserRouter>
-		
+	</CartProvider>
 	);
 }
 
