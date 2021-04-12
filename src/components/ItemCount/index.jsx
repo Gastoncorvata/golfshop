@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-import React, {useState} from "react";
-=======
 import React, { useState } from "react";
->>>>>>> Stashed changes
 import { Link } from 'react-router-dom';
 
 

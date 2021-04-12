@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { ItemCount } from "../ItemCount";
 import { Link } from "react-router-dom";
-<<<<<<< Updated upstream
-=======
 import { CartContext } from "../../Context/CartContext";
 
 
->>>>>>> Stashed changes
 
 export default function ItemDetail({ item }) {
     const [count, setCount] = useState(0)
 
-<<<<<<< Updated upstream
-const sumar = (contador)=>{
-    //aca va un Alert amigable que avisa que se agrego un item al cart
-    setCount (contador)
-}
-=======
     const  { addItem }  = useContext(CartContext);
 
     const addHandler = (contador) => {
@@ -24,7 +15,6 @@ const sumar = (contador)=>{
 			addItem(item, contador);
 			setCount(contador);
 		};
->>>>>>> Stashed changes
 
     return (
     <>
@@ -48,33 +38,6 @@ const sumar = (contador)=>{
                         <div className="text-sm text-gray-500 ml-3">{item?.stock} In stock Now</div>
                     </div>
                     <div className="flex items-baseline mt-9 py-4 border-t border-gray-100">
-<<<<<<< Updated upstream
-                    <div className="space-x-2 flex text-sm font-light text-black">
-                        
-                    </div>
-                    <div className="ml-auto text-sm font-light text-gray-500">{item?.description}</div>
-                    </div>
-
-                    { count === 0 ?
-                    <ItemCount stock={item.stock} inicio={0} onAdd={ sumar } />
-                    :
-                    <div>
-                        <Link to="/">
-                            <button className="bg-gray-700 border flex h-auto hover:bg-teal-500 items-center justify-center m-1 mx-4 rounded text-white w-10/12" type="button"> Seguir Comprando </button>
-                        </Link>
-                        <Link to="/cart">
-                            <button className="active:bg-emerald-600 bg-blue-500 border border-gray-200 flex h-auto hover:bg-teal-500 items-center justify-center mx-4 rounded text-white w-10/12" type="button"> Finalizar </button>
-                        </Link>
-                    </div>
-                    
-                    }
-
-                    
-
-                    <p className="text-sm text-gray-500">
-                    Free shipping on all Argentine orders.
-                    </p>
-=======
                         <div className="space-x-2 flex text-sm font-light text-black"></div>
                         <div className="ml-auto text-sm font-light text-gray-500">{item?.description}</div>
                     </div>
@@ -105,17 +68,9 @@ const sumar = (contador)=>{
                     )}
 
                     <p className="text-sm text-gray-500">Free shipping on all orders.</p>
->>>>>>> Stashed changes
                 </form>
             </div>
-<<<<<<< Updated upstream
-        </>
-        
-        
-    );
-=======
         </div>
     </>
 );
->>>>>>> Stashed changes
 }
