@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import EmptyCart from "../EmptyCart";
+import FullCart from "../FullCart";
 
-export const Cart = () => {
-	const CartContextUse = useContext(CartContext);
+const Cart = () => {
+	const { cart } = useContext(CartContext);
 
 	return (
-		<div>
-			<h1 className=" bold text-center text-teal-500">
-				{" "}
-				SOY UN CARRITO DE CHOPIN {CartContextUse}{" "}
-			</h1>
-		</div>
+		<>
+			<div className="">
+				{cart.length <= 0 ? <EmptyCart /> : <FullCart />}
+			</div>
+		</>
 	);
 };
 
