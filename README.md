@@ -24,11 +24,13 @@
 **En consola:**
 
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
+:wrench:
 ```sh
 npm install
 ```
   [info.](https://docs.npmjs.com/cli/v7/commands/npm-install)
 
+:wrench:
 **Luego ejecuta el comando:**
 ```sh
 npm start 
