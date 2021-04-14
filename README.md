@@ -21,8 +21,8 @@
 - Seleccionar y modificar la cantidad de producto para agregar al carrito (ItemCount). 
 
 	:computer: 	:printer:  
-**En consola:**
-```sh
+**En consola:**  
+:hammer_and_wrench:   
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
 
 ```sh
