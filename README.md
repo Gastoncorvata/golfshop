@@ -22,7 +22,7 @@
 
 	:computer: 	:printer:  
 **En consola:**
-:gear:
+```sh
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
 
 ```sh
