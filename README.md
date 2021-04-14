@@ -1,8 +1,8 @@
 # GOLF SHOP 
 
-
+	:fire:	:fire:	:fire:	:fire:	:fire:
 ## _Ecommerce ReactJs_ 
-
+	:fire:	:fire:	:fire:	:fire:	:fire:
 > Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
 ### Proposito
@@ -21,7 +21,7 @@
 
 - Seleccionar y modificar la cantidad de producto para agregar al carrito (ItemCount).
 
-
+	:computer: 	:printer:  
 **En consola:**
 
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
@@ -36,8 +36,4 @@ npm start
 ```
 [info.](https://docs.npmjs.com/cli/v7/commands/npm-start)
 
-**Estilos con tailwind css:**
-```sh
-npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 
-```
-[info.](https://tailwindcss.com/docs/guides/create-react-app)
+
