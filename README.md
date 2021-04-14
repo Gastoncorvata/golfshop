@@ -22,15 +22,15 @@
 
 	:computer: 	:printer:  
 **En consola:**
-
+:gear:
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
-:wrench:
+
 ```sh
 npm install
 ```
   [info.](https://docs.npmjs.com/cli/v7/commands/npm-install)
 
-:wrench:
+:gear:
 **Luego ejecuta el comando:**
 ```sh
 npm start 
