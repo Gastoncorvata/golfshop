@@ -21,7 +21,7 @@ const FullCart = () => {
 					})}
 					<div className="">
 						<button onClick={historyGoBack} className="">
-							Volver a productos
+							Volver a categoria
 						</button>
 						<h2 className="">
 							Total {cart.length}
