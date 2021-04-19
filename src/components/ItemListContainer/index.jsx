@@ -6,28 +6,34 @@ import { getFirestore } from "../../firebase";
 export default function ItemListContainer() {
 const [items, setItems] = useState([]);
 const {categoryId} = useParams();
+
 useEffect(() => {
     const db = getFirestore();
-    const itemsCollection = db.collection('items');
+    const itemsCollection = db.collection("items");
     const filtrado = itemsCollection.where("category", "==", "categoryId" );
     const prom = filtrado.get();
 
-    prom.then((snaptshot)=>{
+    prom.then((snaptshot) => {
+			console.log("se consultaron los datos");
+			console.log(snaptshot);
 
-        if(snaptshot.size > 0){
-        setItems(snaptshot.docs.map(doc => {
-            return {id:doc.id,  ...doc.data()}
-        }
-            ))
-        }
-    })
+			if (snaptshot.size > 0) {
+				console.log(snaptshot.docs.map((doc) => doc.data()));
 
+				console.log(snaptshot.docs.map((doc) => doc.id));
+
+				setItems(
+					snaptshot.docs.map((doc) => {
+						return { id: doc.id, ...doc.data() };
+					})
+				);
+			}
+		});
     },[categoryId]);
 
-
     return (
-
         <>
+        {categoryId}
             <ItemList items={items}/>
         </>
     );

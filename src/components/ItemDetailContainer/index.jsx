@@ -13,13 +13,13 @@ const getItems = (id) => {
 };
 
 export default function ItemDetailContainer() {
-	const [item, setItem] = useState(null);
+	const [ item, setItem ] = useState(null);
 	const { itemId } = useParams();
 
 	useEffect(() => {
-		getItems(itemId).then((res) => {
-			if (res.exists) {
-				setItem(res.data());
+		getItems(itemId).then((resultado) => {
+			if (resultado.exists) {
+				setItem(resultado.data());
 			}
 		});
 		return;}, [itemId]);

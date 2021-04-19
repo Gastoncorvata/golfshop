@@ -9,8 +9,8 @@ const app = firebase.initializeApp({
     storageBucket: "golfshop-coder.appspot.com",
     messagingSenderId: "56752406523",
     appId: "1:56752406523:web:53e190510a51454d6b155e",
-    measurementId: "G-0PVERCQ1W1",
-});
+    measurementId: "G-0PVERCQ1W1"
+    });
 
 export const getFirebase = () => {
 	return app;

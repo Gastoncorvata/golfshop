@@ -19,7 +19,7 @@ const FullCart = () => {
 					{cart.map((cartItem) => {
 						return <CartItems key={cartItem.item.id} cartItem={cartItem} />;
 					})}
-					<div className="">
+					<div className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded">
 						<button onClick={historyGoBack} className="">
 							Volver a categoria
 						</button>
@@ -33,9 +33,14 @@ const FullCart = () => {
 			</div>
 			<div className="">
 				<Link to={`/pagar`}>
-					<button className="">Proceder al pago</button>
+					<button className=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+						Proceder al pago
+					</button>
 				</Link>
-				<button className="" onClick={ clear }>
+				<button
+					className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded"
+					onClick={clear}
+				>
 					Vaciar carrito
 				</button>
 			</div>
