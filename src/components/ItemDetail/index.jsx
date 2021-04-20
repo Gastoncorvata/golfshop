@@ -43,7 +43,7 @@ export default function ItemDetail({ item }) {
                     </div>
 
                     {count === 0 ? (
-                        <ItemCount stock={item.stock} initial={ 0 } onAdd={ addHandler } />
+                        <ItemCount stock={item?.stock} initial={ 0 } onAdd={ addHandler } />
                     ) : (
                         <div>
                             <Link to="/">

@@ -11,46 +11,53 @@ const CartItems = ({ cartItem }) => {
 
 	return (
 		<>
-			<ul className="divide-y divide-gray-100">
-				<article className="p-4 flex space-x-4">
-					<img
-						src={cartItem.item.img2}
-						alt=""
-						className="flex-none w-18 h-18 rounded-lg object-cover bg-gray-100"
-						width="144"
-						height="144"
-					/>
-					<div className="min-w-0 relative flex-auto sm:pr-20 lg:pr-0 xl:pr-20">
-						<h2 className="text-lg font-semibold text-black mb-0.5">{cartItem.item.title}</h2>
-						<dl className="flex flex-wrap text-sm font-medium whitespace-pre">
+			<tbody className="divide-y divide-gray-200">
+				<tr>
+					<td className="px-6 py-4">
+						<div className="flex items-center space-x-3">
+							<div className="inline-flex w-10 h-10">
+								<img
+									className="w-10 h-10 object-cover rounded-full"
+									alt="Product avatar"
+									src={cartItem.item.img2}
+								/>
+							</div>
 							<div>
-								<dt className="sr-only">Description</dt>
-								<dd> · {cartItem.item.description2}</dd>
+								<p className="">{cartItem.item.description2}</p>
+								<p className="text-gray-500 text-sm font-semibold tracking-wide">
+									{cartItem.item.marca}
+								</p>
 							</div>
-							<div className="flex-none w-full mt-0.5 font-normal">
-								<dt className="inline">By</dt>{" "}
-								<dd className="inline text-black">{cartItem.item.marca}</dd>
-							</div>
-							<div className="flex-none w-full mt-0.5 font-normal">
-								<dt className="inline">Unidades</dt>{" "}
-								<dd className="inline text-black">{cartItem.quantity} </dd>
-							</div>
-							<div className="flex-none w-full mt-0.5 font-normal">
-								<dt className="inline">u$d</dt>{" "}
-								<dd className="inline text-black">{cartItem.item.price} c/u</dd>
-							</div>
-							<div class="hover:bg-blueGray-400 items-center px-4 rounded-full text-base" onClick={handlerRemoveItem}>
-								<dt className="text-red-700">
-									<button> Quitar </button>
-									<i class="far fa-trash-alt" >
-										{" "}
-									</i>
-								</dt>
-							</div>
-						</dl>
-					</div>
-				</article>
-			</ul>
+						</div>
+					</td>
+					<td className="px-6 py-4">
+						<p className="">{cartItem.item.title}</p>
+						<p className="text-gray-500 text-sm font-semibold tracking-wide">
+							{cartItem.item.description2}
+						</p>
+					</td>
+					<td className="px-6 py-4">
+						<p className="">Price</p>
+						<p className="text-gray-500 text-sm font-semibold tracking-wide text-center">
+							u$d {cartItem.item.price}
+						</p>
+					</td>
+					<td className="px-6 py-4">
+						<p className="">Quantity</p>
+						<p className="text-gray-500 text-sm font-semibold tracking-wide text-center">
+							{cartItem.quantity}
+						</p>
+					</td>
+					<td className="px-6 py-4 text-center">
+						<div
+							className="hover:bg-red-500 hover:text-white items-center px-4 rounded-full text-base"
+							onClick={handlerRemoveItem}
+						>
+							<i className="far fa-trash-alt"> </i>
+						</div>
+					</td>
+				</tr>
+			</tbody>
 		</>
 	);
 };

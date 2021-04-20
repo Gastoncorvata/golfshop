@@ -9,7 +9,7 @@ const Cart = () => {
 
 	return (
 		<>
-			<div className="">
+			<div className="grid">
 				{cart.length <= 0 ? <EmptyCart /> : <FullCart />}
 			</div>
 		</>
