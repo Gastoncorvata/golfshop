@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { CartProvider } from "./Context/CartContext";
 import Cart from "./components/Cart";
+import Order from "./components/Order";
 
 function App() {
 	return (
@@ -27,6 +28,10 @@ function App() {
 
 						<Route path="/cart">
 							<Cart />
+						</Route>
+
+						<Route path="/pagar">
+							<Order />
 						</Route>
 
 						<Route path="*">

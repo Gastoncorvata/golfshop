@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useFirebase } from "../../firebase";
+import { getFirestore} from "../../firebase";
 
 
 const Order = () => {
 	const [order, setOrder] = useState({});
-	const { getOrderByID } = useFirebase();
+	const { getOrderByID } = getFirestore();
 	const { orderId } = useParams();
 
 

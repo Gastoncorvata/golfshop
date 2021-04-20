@@ -20,7 +20,7 @@ const FullCart = () => {
 
 			<h2 className="m-8 p-5 text-4xl text-center text-lightBlue-400">
 				Total {cart.length}
-				{cart.length > 1 ? <span> Productos: </span> : <span> (producto): </span>}
+				{cart.length > 1 ? <span> Productos: </span> : <span> Producto: </span>}
 				<strong className="">U$S&nbsp;{cart.totalPrice}</strong>
 			</h2>
 
