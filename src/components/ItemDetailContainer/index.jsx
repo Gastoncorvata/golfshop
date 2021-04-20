@@ -17,9 +17,9 @@ export default function ItemDetailContainer() {
 	const { itemId } = useParams();
 
 	useEffect(() => {
-		getItems(itemId).then((resultado) => {
-			if (resultado.exists) {
-				setItem(resultado.data());
+		getItems(itemId).then((res) => {
+			if (res.exists) {
+				setItem({ id: res.id, ...res.data() });
 			}
 		});
 		return;}, [itemId]);

@@ -10,7 +10,7 @@ const {categoryId} = useParams();
 useEffect(() => {
     const db = getFirestore();
     const itemsCollection = db.collection("items");
-    const filtrado = itemsCollection.where("category", "==", "categoryId" );
+    const filtrado = categoryId ? itemsCollection.where("category", "==", categoryId ): itemsCollection;
     const prom = filtrado.get();
 
     prom.then((snaptshot) => {
