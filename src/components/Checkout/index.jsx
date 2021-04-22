@@ -50,7 +50,7 @@ const Checkout = () => {
 						<input
 							className="checkout__input"
 							type="text"
-							name="email"
+							name="text"
 							id="nombreApellido"
 							onChange={(e) => {
 								setName(e.target.value);
@@ -91,7 +91,7 @@ const Checkout = () => {
 						</label>
 						<input
 							className="checkout__input"
-							type="text"
+							type="address"
 							name="adress"
 							id="adress"
 							onChange={(e) => {
