@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { CartProvider } from "./Context/CartContext";
 import Cart from "./components/Cart";
-import Order from "./components/Order";
+import Checkout from "./components/Checkout";
 
 function App() {
 	return (
@@ -30,8 +30,8 @@ function App() {
 							<Cart />
 						</Route>
 
-						<Route path="/pagar">
-							<Order />
+						<Route path="/checkout">
+							<Checkout />
 						</Route>
 
 						<Route path="*">

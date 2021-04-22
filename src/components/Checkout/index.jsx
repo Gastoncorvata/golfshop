@@ -1,7 +1,7 @@
 import "./checkout.css";
 import { useContext, useState } from "react";
-import { CartContext } from "../../Context/CartContext.jsx";
-import { useFirebase } from "../../firebase";
+import { CartContext } from "../../Context/CartContext";
+import { getFirebase } from "../../firebase/";
 import { useHistory } from "react-router-dom";
 import CartItems from "../CartItems";
 
@@ -11,7 +11,7 @@ const Checkout = () => {
 	const [phone, setPhone] = useState("");
 	const [adress, setAdress] = useState("");
 	const { cart, clearCart } = useContext(CartContext);
-	const { updateStock, createOrder } = useFirebase();
+	const { updateStock, createOrder } = getFirebase();
 	const history = useHistory();
 
 	const handleCheckout = () => {
@@ -43,6 +43,7 @@ const Checkout = () => {
 			<div className="checkout__container">
 				<form className="checkout__form__container">
 					<form>
+						<h3> Completa tus datos para confirmar la compra! </h3>
 						<label className="data" for="name">
 							Nombre y Apellido
 						</label>
@@ -98,7 +99,10 @@ const Checkout = () => {
 							}}
 						/>
 					</form>
-					<button className="checkout__button" onClick={handleCheckout}>
+					<button
+						className="bg-indigo-600 font-bold hover:bg-indigo-500 hover:shadow-lg m-4 px-12 rounded-full text-white w-auto"
+						onClick={handleCheckout}
+					>
 						Confirmar compra
 					</button>
 				</form>
@@ -108,8 +112,8 @@ const Checkout = () => {
 					})}
 					<div className="checkout__cart__right">
 						<h2 className="subtotal">
-							Subtotal {cart.length}
-							{cart.length > 1 ? <span> (productos): </span> : <span> (producto): </span>}
+							Total {cart.length}
+							{cart.length > 1 ? <span> Productos: </span> : <span> Producto: </span>}
 							<strong className="checkout__subtotal">U$S&nbsp;{cart.totalPrice}</strong>
 						</h2>
 					</div>

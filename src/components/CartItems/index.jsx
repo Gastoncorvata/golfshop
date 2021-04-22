@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 
 
+
 const CartItems = ({ cartItem }) => {
 	const { removeItem } = useContext(CartContext);
 
@@ -46,6 +47,12 @@ const CartItems = ({ cartItem }) => {
 						<p className="">Quantity</p>
 						<p className="text-gray-500 text-sm font-semibold tracking-wide text-center">
 							{cartItem.quantity}
+						</p>
+					</td>
+					<td className="px-6 py-4">
+						<p className="text-center text-sm w-16">Sub-Total</p>
+						<p className="text-gray-500 text-sm font-semibold tracking-wide text-center">
+							{cartItem.quantity * cartItem.item.price}
 						</p>
 					</td>
 					<td className="px-6 py-4 text-center">

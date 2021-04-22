@@ -25,7 +25,7 @@ const FullCart = () => {
 			</h2>
 
 			<div className="flex justify-center">
-				<Link to={`/pagar`}>
+				<Link to={`/checkout`}>
 					<button className=" bg-blue-500 border-b-4 border-blue-700 font-bold hover:bg-blueGray-400 m-4 px-4 py-2 rounded text-white">
 						Proceder al pago
 					</button>
