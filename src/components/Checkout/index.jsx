@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
-import { getFirebase } from "../../firebase/";
+import { useFirebaseContext } from "../../Context/FirebaseContext";
 import { useHistory } from "react-router-dom";
 import CartItems from "../CartItems";
 
@@ -10,7 +10,7 @@ const Checkout = () => {
 	const [phone, setPhone] = useState("");
 	const [adress, setAdress] = useState("");
 	const { cart, clearCart } = useContext(CartContext);
-	const { updateStock, createOrder } = getFirebase();
+	const { updateStock, createOrder } = useFirebaseContext();
 	const history = useHistory();
 
 	const handleCheckout = () => {
@@ -40,16 +40,16 @@ const Checkout = () => {
 	return (
 		<>
 			<div className="flex justify-center">
-				<form className="bg-blueGray-100 border flex-col items-center m-4 p-3 rounded w-auto">
+				<div className="bg-blueGray-100 border flex-col items-center m-4 p-3 rounded w-auto">
 					<form>
 						<h3> Completa tus datos para confirmar la compra! </h3>
-						<label className="data" for="name">
+						<label className="" htmlFor="nombreApellido">
 							Nombre y Apellido
 						</label>
 						<input
 							className="h-8 mb-2 rounded w-full"
 							type="text"
-							name="text"
+							name="name"
 							id="nombreApellido"
 							onChange={(e) => {
 								setName(e.target.value);
@@ -57,7 +57,7 @@ const Checkout = () => {
 						/>
 					</form>
 					<form>
-						<label className="data" for="Email">
+						<label className="" htmlFor="Email">
 							Email
 						</label>
 						<input
@@ -71,7 +71,7 @@ const Checkout = () => {
 						/>
 					</form>
 					<form>
-						<label className="data" for="phone">
+						<label className="" htmlFor="phone">
 							Teléfono
 						</label>
 						<input
@@ -85,7 +85,7 @@ const Checkout = () => {
 						/>
 					</form>
 					<form>
-						<label className="data" for="adress">
+						<label className="" htmlFor="adress">
 							Dirección
 						</label>
 						<input
@@ -104,8 +104,8 @@ const Checkout = () => {
 					>
 						Confirmar compra
 					</button>
-				</form>
-				<div className="checkout__item-container">
+				</div>
+				<div className="">
 					{cart.map((cartItem) => {
 						return <CartItems key={cartItem.id} cartItem={cartItem} />;
 					})}

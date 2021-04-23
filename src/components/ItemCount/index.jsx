@@ -70,7 +70,7 @@ export function ItemCount ({stock, initial, onAdd}){
 							target="_blank"
 							rel="noreferrer"
 						>
-							<i class="far fa-share-square"></i>
+							<i className="far fa-share-square"></i>
 						</a>
 					</button>
 				</div>
