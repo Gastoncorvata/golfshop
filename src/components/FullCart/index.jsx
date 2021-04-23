@@ -13,9 +13,13 @@ const FullCart = () => {
 	return (
 		<>
 			<div className="justify-self-center mt-10">
-				{cart.map((cartItem) => {
-					return <CartItems key={cartItem.item.id} cartItem={cartItem} />;
-				})}
+				<table>
+					<tbody>
+						{cart.map((cartItem) => {
+							return <CartItems key={cartItem.item.id} cartItem={cartItem} />;
+						})}
+					</tbody>
+				</table>
 			</div>
 
 			<h2 className="m-8 p-5 text-4xl text-center text-lightBlue-400">

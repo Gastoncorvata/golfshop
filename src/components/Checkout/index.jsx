@@ -106,8 +106,8 @@ const Checkout = () => {
 					</button>
 				</div>
 				<div className="">
-					{cart.map((cartItem) => {
-						return <CartItems key={cartItem.id} cartItem={cartItem} />;
+					{cart.map((cartItem, idx) => {
+						return <CartItems key={idx} cartItem={cartItem} />;
 					})}
 					<div className="bg-blueGray-100 mt-10 rounded text-3xl text-center w-6/12">
 						<h2 className="border p-3 rounded">

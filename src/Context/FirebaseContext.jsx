@@ -8,7 +8,7 @@ export const useFirebaseContext = () => useContext(FirebaseContext);
 const FirebaseProvider = ({ children }) => {
 	const db = getFirestore();
 
-	const updateStock = (cart) => {
+	function updateStock (cart) {
 		return new Promise((resolve, reject) => {
 			cart.map(async (cartItem) => {
 				let query = await db.collection("item").doc(cartItem.item.id).get();
