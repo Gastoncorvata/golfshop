@@ -9,9 +9,7 @@ const Cart = () => {
 
 	return (
 		<>
-			<div className="grid">
-				{cart.length <= 0 ? <EmptyCart /> : <FullCart />}
-			</div>
+			<div className="grid mt-4 rounded">{cart.length <= 0 ? <EmptyCart /> : <FullCart />}</div>
 		</>
 	);
 };

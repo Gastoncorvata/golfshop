@@ -11,7 +11,8 @@ export default function ItemDetail({ item }) {
     const  { addItem }  = useContext(CartContext);
 
     const addHandler = (contador) => {
-			alert("se agrego un item", contador);
+            //Alert para notificar que se agrego un item
+
 			addItem(item, contador);
 			setCount(contador);
 		};

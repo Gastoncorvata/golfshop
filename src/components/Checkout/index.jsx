@@ -1,4 +1,3 @@
-import "./checkout.css";
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { getFirebase } from "../../firebase/";
@@ -40,15 +39,15 @@ const Checkout = () => {
 
 	return (
 		<>
-			<div className="checkout__container">
-				<form className="checkout__form__container">
+			<div className="flex justify-center">
+				<form className="bg-blueGray-100 border flex-col items-center m-4 p-3 rounded w-auto">
 					<form>
 						<h3> Completa tus datos para confirmar la compra! </h3>
 						<label className="data" for="name">
 							Nombre y Apellido
 						</label>
 						<input
-							className="checkout__input"
+							className="h-8 mb-2 rounded w-full"
 							type="text"
 							name="text"
 							id="nombreApellido"
@@ -62,8 +61,8 @@ const Checkout = () => {
 							Email
 						</label>
 						<input
-							className="checkout__input"
-							type="email"
+							className="h-8 mb-2 rounded w-full"
+							type="text"
 							name="email"
 							id="email"
 							onChange={(e) => {
@@ -76,7 +75,7 @@ const Checkout = () => {
 							Teléfono
 						</label>
 						<input
-							className="checkout__input"
+							className="h-8 mb-2 rounded w-full"
 							type="text"
 							name="phone"
 							id="phone"
@@ -90,8 +89,8 @@ const Checkout = () => {
 							Dirección
 						</label>
 						<input
-							className="checkout__input"
-							type="address"
+							className="h-8 mb-2 rounded w-full"
+							type="text"
 							name="adress"
 							id="adress"
 							onChange={(e) => {
@@ -100,7 +99,7 @@ const Checkout = () => {
 						/>
 					</form>
 					<button
-						className="bg-indigo-600 font-bold hover:bg-indigo-500 hover:shadow-lg m-4 px-12 rounded-full text-white w-auto"
+						className="bg-indigo-600 font-bold h-12 hover:bg-indigo-500 hover:shadow-lg m-4 ml-8 px-12 rounded-full text-white w-auto"
 						onClick={handleCheckout}
 					>
 						Confirmar compra
@@ -110,11 +109,11 @@ const Checkout = () => {
 					{cart.map((cartItem) => {
 						return <CartItems key={cartItem.id} cartItem={cartItem} />;
 					})}
-					<div className="checkout__cart__right">
-						<h2 className="subtotal">
+					<div className="bg-blueGray-100 mt-10 rounded text-3xl text-center w-6/12">
+						<h2 className="border p-3 rounded">
 							Total {cart.length}
 							{cart.length > 1 ? <span> Productos: </span> : <span> Producto: </span>}
-							<strong className="checkout__subtotal">U$S&nbsp;{cart.totalPrice}</strong>
+							<strong className="text-teal-500">U$S&nbsp;{cart.totalPrice}</strong>
 						</h2>
 					</div>
 				</div>
