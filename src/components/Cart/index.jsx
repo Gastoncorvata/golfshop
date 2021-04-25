@@ -3,7 +3,6 @@ import { CartContext } from "../../Context/CartContext";
 import EmptyCart from "../EmptyCart";
 import FullCart from "../FullCart";
 
-
 const Cart = () => {
 	const { cart } = useContext(CartContext);
 

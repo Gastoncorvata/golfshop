@@ -1,48 +1,73 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
-import { useFirebaseContext } from "../../Context/FirebaseContext";
-import { useHistory } from "react-router-dom";
-import CartItems from "../CartItems";
+import { getFirestore }  from "../../firebase";
+import firebase from "firebase/app";
+
 
 const Checkout = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
 	const [adress, setAdress] = useState("");
-	const { cart, clearCart } = useContext(CartContext);
-	const { updateStock, createOrder } = useFirebaseContext();
-	const history = useHistory();
+	const { cart, totalPrecio } = useContext(CartContext);
+	const [idOrden, setIdOrden] = useState(null);
 
-	const handleCheckout = () => {
-		let newOrder = {
-			buyer: [
-				{
-					name: name,
-					email: email,
-					phone: phone,
-					adress: adress,
-				},
-			],
-			items: [...cart],
-			total: cart.totalPrice,
-		};
 
-		updateStock(cart)
-			.then((result) => {
-				return createOrder(newOrder);
-			})
-			.then((result) => {
-				clearCart();
-				history.push(`/order/${result.id}`);
-			});
-	};
+const guardarOrden = (e) => {
+	e.preventDefault();
+	const comprador = { name, phone, email, adress };
+
+	console.log(comprador);
+
+	const db = getFirestore();
+
+	const ordersCollection = db.collection("orders");
+
+	const date = firebase.firestore.Timestamp.fromDate(new Date());
+
+	const items = cart.map((cartItem) => {
+		return { id: cartItem.id, title: cartItem.title, price: cartItem.price };
+	});
+
+	ordersCollection.add({ buyer: comprador, adress: adress, items, date, total: totalPrecio }).then((doc) => {
+		setIdOrden(doc.id);
+	});
+
+	const itemsCollection = db.collection("items").where(
+		firebase().firestore.FieldPath.documentId(),
+		"in",
+		cart.map((e) => e.item.id)
+	);
+
+	itemsCollection.get().then((resultado) => {
+		const batch = db.batch();
+
+		for (const documento of resultado) {
+			const stockActual = documento.data().stock;
+
+			const itemDelCart = cart.find((cartItem) => cartItem.item.id === document.id);
+
+			const cantidadComprado = itemDelCart.quantity;
+
+			const nuevoStock = stockActual - cantidadComprado;
+
+			batch.update(document.ref, { stock: nuevoStock });
+			//update
+		}
+
+		batch.commit();
+	});
+};
 
 	return (
 		<>
+			{idOrden ? `Orden generada: ${idOrden}` : null}
+			<h3 className="font-bold text-3xl text-blue-400 text-center">
+				Completa tus datos para confirmar la compra!{" "}
+			</h3>
 			<div className="flex justify-center">
 				<div className="bg-blueGray-100 border flex-col items-center m-4 p-3 rounded w-auto">
-					<form>
-						<h3> Completa tus datos para confirmar la compra! </h3>
+					<form action="" onSubmit={guardarOrden}>
 						<label className="" htmlFor="nombreApellido">
 							Nombre y Apellido
 						</label>
@@ -99,23 +124,12 @@ const Checkout = () => {
 						/>
 					</form>
 					<button
+						type="submit"
 						className="bg-indigo-600 font-bold h-12 hover:bg-indigo-500 hover:shadow-lg m-4 ml-8 px-12 rounded-full text-white w-auto"
-						onClick={handleCheckout}
+						onClick={guardarOrden}
 					>
 						Confirmar compra
 					</button>
-				</div>
-				<div className="">
-					{cart.map((cartItem, idx) => {
-						return <CartItems key={idx} cartItem={cartItem} />;
-					})}
-					<div className="bg-blueGray-100 mt-10 rounded text-3xl text-center w-6/12">
-						<h2 className="border p-3 rounded">
-							Total {cart.length}
-							{cart.length > 1 ? <span> Productos: </span> : <span> Producto: </span>}
-							<strong className="text-teal-500">U$S&nbsp;{cart.totalPrice}</strong>
-						</h2>
-					</div>
 				</div>
 			</div>
 		</>

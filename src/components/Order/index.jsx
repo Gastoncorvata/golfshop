@@ -1,11 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+/*import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { getFirestore} from "../../firebase";
+import { useFirestore} from "../../Context/FirebaseContext";
 
 
 const Order = () => {
 	const [order, setOrder] = useState({});
-	const { getOrderByID } = getFirestore();
+	const { getOrderByID } = useFirestore();
 	const { orderId } = useParams();
 
 
@@ -32,4 +32,4 @@ const Order = () => {
 	);
 };
 
-export default Order;
+export default Order;*/
