@@ -20,13 +20,14 @@
 
 - Modificar la cantidad de productos que se desea agregar al carrito.
 
--Tener una vista detallada de todos los porductos agregados al carrito con el precio parcial y total.
+- Tener una vista detallada de todos los porductos agregados al carrito con el precio parcial y total.
 
--Generar y guardar una orden de compra unica con los datos de la compra y el comprado.
+- Generar y guardar una orden de compra unica con los datos de la compra y el comprado.
 
--Utilizar Firebase para guardar la informacion de los productos y las ordenes generadas con cada compra. 
+- Utilizar Firebase para guardar la informacion de los productos y las ordenes generadas con cada compra. 
 
-	:computer: 	:printer:  
+:computer: 	:printer:  
+	
 **En consola:**  
 :hammer_and_wrench:   
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
@@ -42,8 +43,9 @@ npm install
 npm start 
 ```
 [info.](https://docs.npmjs.com/cli/v7/commands/npm-start)
+## O podes... :eyes:
+- Ver y probar todo el funcionamiento de la pagina en el siguiente Link:
+[golfshop.com.ar](https://ecstatic-kare-dd8a57.netlify.app/) :point_left:
 
-- Podes ver todo el funcionamiento de la pagina en el siguiente Link:
-[golfshop.com.ar](https://ecstatic-kare-dd8a57.netlify.app/)
 
-
+## 🏌️‍♂️  Enjoy it! ⛳
