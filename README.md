@@ -12,13 +12,19 @@
 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://)
-##  Funcionalidades terminadas:
+##  Funcionalidades:
 
 - Filtrar productos segun categorias, tres en total (Clubs, Bags y Accessories). 	
 
-- Seleccionar una vista detallada de cada producto, reconocida por su (ItemId). 	
+- Seleccionar una vista detallada de cada producto.
 
-- Seleccionar y modificar la cantidad de producto para agregar al carrito (ItemCount). 
+- Modificar la cantidad de productos que se desea agregar al carrito.
+
+-Tener una vista detallada de todos los porductos agregados al carrito con el precio parcial y total.
+
+-Generar y guardar una orden de compra unica con los datos de la compra y el comprado.
+
+-Utilizar Firebase para guardar la informacion de los productos y las ordenes generadas con cada compra. 
 
 	:computer: 	:printer:  
 **En consola:**  
@@ -36,5 +42,8 @@ npm install
 npm start 
 ```
 [info.](https://docs.npmjs.com/cli/v7/commands/npm-start)
+
+- Podes ver todo el funcionamiento de la pagina en el siguiente Link:
+[www.golfshop.com.ar] (https://ecstatic-kare-dd8a57.netlify.app/)
 
 
