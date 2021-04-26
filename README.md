@@ -45,7 +45,7 @@ npm start
 [info.](https://docs.npmjs.com/cli/v7/commands/npm-start)
 ## O podes... 👀
 **Ver y probar todo el funcionamiento de la pagina en el siguiente Link:
-[golfshop.com.ar](https://ecstatic-kare-dd8a57.netlify.app/)** 👈
+[golfshop.com.ar](https://golfshop.netlify.app/)** 👈
 
 
 ## 🏌️‍♂️  Enjoy it! ⛳
