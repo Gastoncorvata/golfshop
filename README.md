@@ -2,8 +2,8 @@
 
 ## _Ecommerce ReactJs_   :zap:   :electron:    :zap:
 
-> Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
-
+> Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app). 
+>   Para darle estilo se utilizo [TailWind CSS.](https://tailwindcss.com/) 🌬️
 ### Proposito
  > Este proyecto tiene la finalidad de ser usado como Ecommerce de productos relacionados al golf. 	:fire:
  > Fue creado con fines educativos, durante el aprendizaje del curso de ReactJs en [CoderHouse](https://www.coderhouse.com/)
@@ -22,7 +22,7 @@
 
 - Tener una vista detallada de todos los porductos agregados al carrito con el precio parcial y total.
 
-- Generar y guardar una orden de compra unica con los datos de la compra y el comprado.
+- Generar y guardar una orden de compra unica con los datos de la compra y el comprador.
 
 - Utilizar Firebase para guardar la informacion de los productos y las ordenes generadas con cada compra. 
 
@@ -44,8 +44,8 @@ npm start
 ```
 [info.](https://docs.npmjs.com/cli/v7/commands/npm-start)
 ## O podes... :eyes:
-- Ver y probar todo el funcionamiento de la pagina en el siguiente Link:
-[golfshop.com.ar](https://ecstatic-kare-dd8a57.netlify.app/) :point_left:
+**Ver y probar todo el funcionamiento de la pagina en el siguiente Link:
+[golfshop.com.ar](https://ecstatic-kare-dd8a57.netlify.app/)** :point_left:
 
 
 ## 🏌️‍♂️  Enjoy it! ⛳
