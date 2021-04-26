@@ -66,7 +66,7 @@ console.log(itemsCollection);
 		<>
 			<div className="float-left h-screen pl-10 text-center w-1/2">
 				<p className="bg-emerald-200 font-medium p-8 rounded-full shadow-2xl text-3xl text-white w-10/12">
-					{idOrden ? `Orden generada: ${idOrden}` : null}
+					{idOrden ? `Tu pedido fue realizado con Exito. TU ORDEN ES: ${idOrden}` : null}
 				</p>
 			</div>
 			<h3 className="font-bold text-3xl text-blue-400 text-center">
