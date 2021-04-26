@@ -26,7 +26,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 			setCart(
 				cart.map((cartItem) => {
 					if (cartItem.item.id === item.id) {
-						return { ...cartItem, quantity: cartItem.quantity + quantity };
+						return { ...cartItem, quantity:cartItem.quantity + quantity };
 					} else {
 						return cartItem;
 					}

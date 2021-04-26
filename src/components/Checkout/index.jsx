@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
-import { getFirestore }  from "../../firebase";
 import firebase from "firebase/app";
+import { getFirestore } from "../../firebase";
+import "firebase/firestore";
 
 
 const Checkout = () => {
@@ -9,7 +10,7 @@ const Checkout = () => {
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
 	const [adress, setAdress] = useState("");
-	const { cart, totalPrecio } = useContext(CartContext);
+	const { cart } = useContext(CartContext);
 	const [idOrden, setIdOrden] = useState(null);
 
 
@@ -26,22 +27,23 @@ const guardarOrden = (e) => {
 	const date = firebase.firestore.Timestamp.fromDate(new Date());
 
 	const items = cart.map((cartItem) => {
-		return { id: cartItem.id, title: cartItem.title, price: cartItem.price };
+		return { id: cartItem.item.id, title: cartItem.item.title, price: cartItem.item.price };
 	});
 
-	ordersCollection.add({ buyer: comprador, adress: adress, items, date, total: totalPrecio }).then((doc) => {
+	ordersCollection.add({ buyer:comprador, items, date }).then((doc) => {
 		setIdOrden(doc.id);
 	});
 
 	const itemsCollection = db.collection("items").where(
-		firebase().firestore.FieldPath.documentId(),
+		firebase.firestore.FieldPath.documentId(),
 		"in",
 		cart.map((e) => e.item.id)
 	);
+console.log(itemsCollection);
 
 	itemsCollection.get().then((resultado) => {
+		if (resultado.exists) {
 		const batch = db.batch();
-
 		for (const documento of resultado) {
 			const stockActual = documento.data().stock;
 
@@ -51,17 +53,22 @@ const guardarOrden = (e) => {
 
 			const nuevoStock = stockActual - cantidadComprado;
 
-			batch.update(document.ref, { stock: nuevoStock });
+			batch.update(documento.ref, { stock: nuevoStock });
 			//update
 		}
 
 		batch.commit();
+		}
 	});
 };
 
 	return (
 		<>
-			{idOrden ? `Orden generada: ${idOrden}` : null}
+			<div className="float-left h-screen pl-10 text-center w-1/2">
+				<p className="bg-emerald-200 font-medium p-8 rounded-full shadow-2xl text-3xl text-white w-10/12">
+					{idOrden ? `Orden generada: ${idOrden}` : null}
+				</p>
+			</div>
 			<h3 className="font-bold text-3xl text-blue-400 text-center">
 				Completa tus datos para confirmar la compra!{" "}
 			</h3>

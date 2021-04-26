@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const EmptyCart = () => {
+
 	return (
 		<>
 			<div className="justify-center mt-24 text-indigo-300">
@@ -11,17 +12,16 @@ const EmptyCart = () => {
 				</h2>
 				<p className="text-2xl text-teal-500 text-center">
 					Buy everything in{" "}
-					<div>
+					<span>
 						<Link to={`/`}>
 							<i className="fa-golf-ball fas hover:bg-amber-500 hover:text-white m-3 p-3 rounded-full text-5xl text-amber-500">
 								Golf Shop
 							</i>
 						</Link>
-					</div>
+					</span>
 				</p>
 			</div>
 		</>
-	);
-};
+	);};
 
 export default EmptyCart;
