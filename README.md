@@ -30,7 +30,7 @@
 ### Instalación:	
 **En consola:**  
 🛠️   
-**Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
+**Recordá instalar todas las dependencias del proyecto ejecutando el comando dentro del directorio del proyecto:** 
 
 ```sh
 npm install
