@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 import { getFirestore } from "../../firebase";
 import "firebase/firestore";
@@ -10,7 +11,7 @@ const Checkout = () => {
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
 	const [adress, setAdress] = useState("");
-	const { cart } = useContext(CartContext);
+	const { cart, totalPrecio } = useContext(CartContext);
 	const [idOrden, setIdOrden] = useState(null);
 
 
@@ -30,7 +31,7 @@ const guardarOrden = (e) => {
 		return { id: cartItem.item.id, title: cartItem.item.title, price: cartItem.item.price };
 	});
 
-	ordersCollection.add({ buyer:comprador, items, date }).then((doc) => {
+	ordersCollection.add({ buyer:comprador, items, date, totalPrecio }).then((doc) => {
 		setIdOrden(doc.id);
 	});
 
@@ -65,7 +66,12 @@ console.log(itemsCollection);
 	return (
 		<>
 			<div className="float-left h-screen pl-10 text-center w-1/2">
-				<p className="bg-emerald-200 font-medium p-8 rounded-full shadow-2xl text-3xl text-white w-10/12">
+				<Link to="../Order">
+					<button className="bg-emerald-200 font-medium p-8 rounded-full shadow-2xl text-3xl text-white w-10/12">
+						Ver orden generada
+					</button>
+				</Link>
+				<p className="">
 					{idOrden ? `Tu pedido fue realizado con Exito. TU ORDEN ES: ${idOrden}` : null}
 				</p>
 			</div>

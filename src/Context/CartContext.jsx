@@ -9,6 +9,15 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 		cartLocalStorage && cartLocalStorage.length > 0 ? cartLocalStorage : defaultValue
 	);
 
+
+	const [totalPrecio, setTotalPrecio] = useState(0);
+    let precio= cart.reduce((acumulador,itemActual)=>{
+            const p = itemActual.quantity * itemActual.item.price
+            return acumulador + p //120
+        },0)[cart];
+
+        setTotalPrecio(precio);
+
 	cart.totalPrice =
 		cart.length > 0
 			? cart.reduce((total, cartItem) => total + cartItem.quantity * cartItem.item.price, 0)
@@ -53,7 +62,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 	}, [cart]);
 
 	return (
-		<CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart }}>
+		<CartContext.Provider value={{ cart, totalPrecio, addItem, removeItem, clear, isInCart }}>
 			{children}
 		</CartContext.Provider>
 	);
