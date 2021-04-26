@@ -1,6 +1,6 @@
-# GOLF SHOP  :golf:
+# GOLF SHOP  ⛳
 
-## _Ecommerce ReactJs_   :zap:   :electron:    :zap:
+## _Ecommerce ReactJs_   ⚡   :electron:    ⚡
 
 > Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app). 
 >   Para darle estilo se utilizo [TailWind CSS.](https://tailwindcss.com/) 🌬️
@@ -26,10 +26,10 @@
 
 - Utilizar Firebase para guardar la informacion de los productos y las ordenes generadas con cada compra. 
 
-:computer: 	:printer:  
+💻 	🖨️  
 ### Instalación:	
 **En consola:**  
-:hammer_and_wrench:   
+🛠️   
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
 
 ```sh
@@ -37,15 +37,15 @@ npm install
 ```
   [info.](https://docs.npmjs.com/cli/v7/commands/npm-install)
 
-:gear:
+⚙️
 **Luego ejecuta el comando:**
 ```sh
 npm start 
 ```
 [info.](https://docs.npmjs.com/cli/v7/commands/npm-start)
-## O podes... :eyes:
+## O podes... 👀
 **Ver y probar todo el funcionamiento de la pagina en el siguiente Link:
-[golfshop.com.ar](https://ecstatic-kare-dd8a57.netlify.app/)** :point_left:
+[golfshop.com.ar](https://ecstatic-kare-dd8a57.netlify.app/)** 👈
 
 
 ## 🏌️‍♂️  Enjoy it! ⛳
