@@ -27,7 +27,7 @@
 - Utilizar Firebase para guardar la informacion de los productos y las ordenes generadas con cada compra. 
 
 :computer: 	:printer:  
-	
+### Instalación:	
 **En consola:**  
 :hammer_and_wrench:   
 **Recordá instalar todas las dependencias del proyecto ejecutando el comando:** 
