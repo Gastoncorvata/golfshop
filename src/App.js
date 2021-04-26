@@ -6,8 +6,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { CartProvider } from "./Context/CartContext";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
-import Order from "./components/Order";
-
 
 function App() {
 	return (
@@ -34,10 +32,6 @@ function App() {
 
 						<Route path="/checkout">
 							<Checkout />
-						</Route>
-
-						<Route path="/order">
-							<Order />
 						</Route>
 
 						<Route path="*">
