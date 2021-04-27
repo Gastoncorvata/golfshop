@@ -10,7 +10,7 @@ const Checkout = () => {
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
 	const [adress, setAdress] = useState("");
-	const { cart } = useContext(CartContext);
+	const { cart, totalPrecio } = useContext(CartContext);
 	const [idOrden, setIdOrden] = useState(null);
 
 
@@ -30,7 +30,7 @@ const guardarOrden = (e) => {
 		return { id: cartItem.item.id, title: cartItem.item.title, price: cartItem.item.price };
 	});
 
-	ordersCollection.add({ buyer:comprador, items, date }).then((doc) => {
+	ordersCollection.add({ buyer: comprador, items, date, totalPrecio }).then((doc) => {
 		setIdOrden(doc.id);
 	});
 

@@ -18,6 +18,16 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 			? cart.reduce((totalItemsCart, cartItem) => totalItemsCart + cartItem.quantity, 0)
 			: "";
 
+	const [totalPrecio, setTotalPrecio] = useState(0);
+
+		useEffect(() => {
+			let precio = cart.reduce((acumulador, itemActual) => {
+				const p = itemActual.quantity * itemActual.item.price;
+				return acumulador + p; //120
+			}, 0);
+			setTotalPrecio(precio);
+		}, [cart]);
+
 	const addItem = (item, quantity) => {
 		if (!isInCart(item.id)) {
 			const newCart = [...cart, { item: item, quantity: quantity }];
@@ -53,7 +63,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 	}, [cart]);
 
 	return (
-		<CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart }}>
+		<CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, totalPrecio }}>
 			{children}
 		</CartContext.Provider>
 	);
