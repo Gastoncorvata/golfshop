@@ -49,4 +49,8 @@ npm start
 
 ## 🏌️‍♂️  Enjoy it! ⛳
 <br>
+<<<<<<< HEAD
 <img src="./public/golfshop.gif" alt="" />
+=======
+<img src="./public/golfshop.gif" />
+>>>>>>> 40746ff0322c25f5106f24a1b3f9395042187fba
