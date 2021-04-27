@@ -14,14 +14,7 @@ useEffect(() => {
     const prom = filtrado.get();
 
     prom.then((snaptshot) => {
-			console.log("se consultaron los datos");
-			console.log(snaptshot);
-
 			if (snaptshot.size > 0) {
-				console.log(snaptshot.docs.map((doc) => doc.data()));
-
-				console.log(snaptshot.docs.map((doc) => doc.id));
-
 				setItems(
 					snaptshot.docs.map((doc) => {
 						return { id: doc.id, ...doc.data() };
@@ -33,7 +26,6 @@ useEffect(() => {
 
     return (
         <>
-        {categoryId}
             <ItemList items={items}/>
         </>
     );

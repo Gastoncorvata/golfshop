@@ -18,8 +18,6 @@ const guardarOrden = (e) => {
 	e.preventDefault();
 	const comprador = { name, phone, email, adress };
 
-	console.log(comprador);
-
 	const db = getFirestore();
 
 	const ordersCollection = db.collection("orders");
@@ -27,7 +25,12 @@ const guardarOrden = (e) => {
 	const date = firebase.firestore.Timestamp.fromDate(new Date());
 
 	const items = cart.map((cartItem) => {
-		return { id: cartItem.item.id, title: cartItem.item.title, price: cartItem.item.price };
+		return {
+			id: cartItem.item.id,
+			title: cartItem.item.title,
+			price: cartItem.item.price,
+			Total: totalPrecio,
+		};
 	});
 
 	ordersCollection.add({ buyer: comprador, items, date, totalPrecio }).then((doc) => {
@@ -39,7 +42,6 @@ const guardarOrden = (e) => {
 		"in",
 		cart.map((e) => e.item.id)
 	);
-console.log(itemsCollection);
 
 	itemsCollection.get().then((resultado) => {
 		if (resultado.exists) {
