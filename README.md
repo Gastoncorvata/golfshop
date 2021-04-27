@@ -50,4 +50,4 @@ npm start
 
 ## 🏌️‍♂️  Enjoy it! ⛳
 <br>
-<img src="./public/golfshop.mp4" />
+<img src="./public/golfshop.gif" />
