@@ -22,14 +22,14 @@ const FullCart = () => {
 
 			<h2 className="m-8 p-5 text-4xl text-center text-lightBlue-400">
 				Total {cart.length}
-				{cart.length > 1 ? <span> Productos: </span> : <span> Producto: </span>}
+				{cart.length > 1 ? <span> Products: </span> : <span> Product: </span>}
 				<strong className="">U$S&nbsp;{cart.totalPrice}</strong>
 			</h2>
 
 			<div className="flex justify-center">
 				<Link to={`/checkout`}>
 					<button className=" bg-blue-500 border-b-4 border-blue-700 font-bold hover:bg-blueGray-400 m-4 px-4 py-2 rounded text-white">
-						Proceder al pago
+						Proceed to payment
 					</button>
 				</Link>
 				<button
@@ -37,14 +37,14 @@ const FullCart = () => {
 					onClick={clear}
 				>
 					{" "}
-					Vaciar carrito
+					Remove cart
 				</button>
 
 				<button
 					onClick={historyGoBack}
 					className="bg-teal-500 border-b-4 border-green-700 font-bold hover:bg-blueGray-400 m-4 px-4 py-2 rounded text-white"
 				>
-					Volver a categoria
+					Back to category
 				</button>
 			</div>
 

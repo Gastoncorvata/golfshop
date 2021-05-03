@@ -40,7 +40,7 @@ npm install
 ⚙️
 **Luego ejecuta el comando:**
 ```sh
-npm start 
+npm start
 ```
 [info.](https://docs.npmjs.com/cli/v7/commands/npm-start)
 ## O podes... 👀

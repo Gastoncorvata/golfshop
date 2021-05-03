@@ -68,17 +68,17 @@ const guardarOrden = (e) => {
 		<>
 			<div className="float-left h-screen pl-10 text-center w-1/2">
 				<p className="bg-emerald-200 font-medium p-8 rounded-full shadow-2xl text-3xl text-white w-10/12">
-					{idOrden ? `Tu pedido fue realizado con Exito. TU ORDEN ES: ${idOrden}` : null}
+					{idOrden ? `Your order was made successfully. YOUR ORDER IS: ${idOrden}` : null}
 				</p>
 			</div>
 			<h3 className="font-bold text-3xl text-blue-400 text-center">
-				Completa tus datos para confirmar la compra!{" "}
+				Fill in your details to confirm the purchase!{" "}
 			</h3>
 			<div className="flex justify-center">
 				<div className="bg-blueGray-100 border flex-col items-center m-4 p-3 rounded w-auto">
 					<form action="" onSubmit={guardarOrden}>
 						<label className="" htmlFor="nombreApellido">
-							Nombre y Apellido
+							Name and Surname
 						</label>
 						<input
 							className="h-8 mb-2 rounded w-full"
@@ -106,7 +106,7 @@ const guardarOrden = (e) => {
 					</form>
 					<form>
 						<label className="" htmlFor="phone">
-							Teléfono
+							Telephone
 						</label>
 						<input
 							className="h-8 mb-2 rounded w-full"
@@ -120,7 +120,7 @@ const guardarOrden = (e) => {
 					</form>
 					<form>
 						<label className="" htmlFor="adress">
-							Dirección
+							Address
 						</label>
 						<input
 							className="h-8 mb-2 rounded w-full"
@@ -137,7 +137,7 @@ const guardarOrden = (e) => {
 						className="bg-indigo-600 font-bold h-12 hover:bg-indigo-500 hover:shadow-lg m-4 ml-8 px-12 rounded-full text-white w-auto"
 						onClick={guardarOrden}
 					>
-						Confirmar compra
+						Confirm purchase
 					</button>
 				</div>
 			</div>

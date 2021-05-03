@@ -24,9 +24,16 @@ export default function ItemDetailContainer() {
 		});
 		return;}, [itemId]);
 	return (
-        <>
-            <h2 className="text-2xl text-center text-amber-500">Vas a comprar <span className="font-light italic text-teal-500"> {item?.title} {item?.marca} </span> por una cantidad de : </h2>
-            <ItemDetail item={item} />
-        </>
+		<>
+			<h2 className="text-2xl text-center text-amber-500">
+				You are going to buy{" "}
+				<span className="font-light italic text-teal-500">
+					{" "}
+					{item?.title} {item?.marca}{" "}
+				</span>{" "}
+				for an amount of :{" "}
+			</h2>
+			<ItemDetail item={item} />
+		</>
 	);
 }

@@ -37,7 +37,7 @@ function App() {
 						<Route path="*">
 							<div className="bg-blueGray-800 flex justify-center w-auto">
 								<img
-									src="https://images.unsplash.com/photo-1583077956273-7d4a69ab8e33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+									src="https://images.unsplash.com/photo-1611890798517-07b0fcb4a811?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80"
 									alt="Page not found"
 									className="h-auto w-10/12"
 								/>
