@@ -16,60 +16,59 @@ const Checkout = () => {
 	const { cart, totalPrecio, clear } = useContext(CartContext);
 	const [idOrden, setIdOrden] = useState(null);
 
+	const guardarOrden = (e) => {
+		e.preventDefault();
+		const comprador = { name, phone, email, adress };
 
-const guardarOrden = (e) => {
-	e.preventDefault();
-	const comprador = { name, phone, email, adress };
+		const db = getFirestore();
 
-	const db = getFirestore();
+		const ordersCollection = db.collection("orders");
 
-	const ordersCollection = db.collection("orders");
+		const date = firebase.firestore.Timestamp.fromDate(new Date());
 
-	const date = firebase.firestore.Timestamp.fromDate(new Date());
+		setTimeout(() => {
+			clear();
+		}, 1000);
 
-	setTimeout(() => {
-		clear();
-	}, 1000);
+		const items = cart.map((cartItem) => {
+			return {
+				id: cartItem.item.id,
+				title: cartItem.item.title,
+				price: cartItem.item.price,
+				Total: totalPrecio,
+			};
+		});
 
-	const items = cart.map((cartItem) => {
-		return {
-			id: cartItem.item.id,
-			title: cartItem.item.title,
-			price: cartItem.item.price,
-			Total: totalPrecio,
-		};
-	});
+		ordersCollection.add({ buyer: comprador, items, date, totalPrecio }).then((doc) => {
+			setIdOrden(doc.id);
+		});
 
-	ordersCollection.add({ buyer: comprador, items, date, totalPrecio }).then((doc) => {
-		setIdOrden(doc.id);
-	});
+		const itemsCollection = db.collection("items").where(
+			firebase.firestore.FieldPath.documentId(),
+			"in",
+			cart.map((e) => e.item.id)
+		);
 
-	const itemsCollection = db.collection("items").where(
-		firebase.firestore.FieldPath.documentId(),
-		"in",
-		cart.map((e) => e.item.id)
-	);
+		itemsCollection.get().then((resultado) => {
+			if (resultado.exists) {
+				const batch = db.batch();
+				for (const documento of resultado) {
+					const stockActual = documento.data().stock;
 
-	itemsCollection.get().then((resultado) => {
-		if (resultado.exists) {
-		const batch = db.batch();
-		for (const documento of resultado) {
-			const stockActual = documento.data().stock;
+					const itemDelCart = cart.find((cartItem) => cartItem.item.id === document.id);
 
-			const itemDelCart = cart.find((cartItem) => cartItem.item.id === document.id);
+					const cantidadComprado = itemDelCart.quantity;
 
-			const cantidadComprado = itemDelCart.quantity;
+					const nuevoStock = stockActual - cantidadComprado;
 
-			const nuevoStock = stockActual - cantidadComprado;
+					batch.update(documento.ref, { stock: nuevoStock });
+					//update
+				}
 
-			batch.update(documento.ref, { stock: nuevoStock });
-			//update
-		}
-
-		batch.commit();
-		}
-	});
-};
+				batch.commit();
+			}
+		});
+	};
 
 	return (
 		<>

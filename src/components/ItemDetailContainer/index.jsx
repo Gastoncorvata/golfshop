@@ -1,10 +1,9 @@
-import React, {useState, useEffect } from 'react'
-import ItemDetail from '../ItemDetail'
+import React, { useState, useEffect } from "react";
+import ItemDetail from "../ItemDetail";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase/";
 
 const getItems = (id) => {
-
 	const db = getFirestore();
 	const itemsCollection = db.collection("items");
 
@@ -13,7 +12,7 @@ const getItems = (id) => {
 };
 
 export default function ItemDetailContainer() {
-	const [ item, setItem ] = useState(null);
+	const [item, setItem] = useState(null);
 	const { itemId } = useParams();
 
 	useEffect(() => {
@@ -22,7 +21,8 @@ export default function ItemDetailContainer() {
 				setItem({ id: res.id, ...res.data() });
 			}
 		});
-		return;}, [itemId]);
+		return;
+	}, [itemId]);
 	return (
 		<>
 			<h2 className="text-2xl text-center text-amber-500">

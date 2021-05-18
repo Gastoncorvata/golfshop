@@ -20,13 +20,13 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 
 	const [totalPrecio, setTotalPrecio] = useState(0);
 
-		useEffect(() => {
-			let precio = cart.reduce((acumulador, itemActual) => {
-				const p = itemActual.quantity * itemActual.item.price;
-				return acumulador + p; //120
-			}, 0);
-			setTotalPrecio(precio);
-		}, [cart]);
+	useEffect(() => {
+		let precio = cart.reduce((acumulador, itemActual) => {
+			const p = itemActual.quantity * itemActual.item.price;
+			return acumulador + p; //120
+		}, 0);
+		setTotalPrecio(precio);
+	}, [cart]);
 
 	const addItem = (item, quantity) => {
 		if (!isInCart(item.id)) {

@@ -4,16 +4,18 @@ import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase";
 
 export default function ItemListContainer() {
-const [items, setItems] = useState([]);
-const {categoryId} = useParams();
+	const [items, setItems] = useState([]);
+	const { categoryId } = useParams();
 
-useEffect(() => {
-    const db = getFirestore();
-    const itemsCollection = db.collection("items");
-    const filtrado = categoryId ? itemsCollection.where("category", "==", categoryId ): itemsCollection;
-    const prom = filtrado.get();
+	useEffect(() => {
+		const db = getFirestore();
+		const itemsCollection = db.collection("items");
+		const filtrado = categoryId
+			? itemsCollection.where("category", "==", categoryId)
+			: itemsCollection;
+		const prom = filtrado.get();
 
-    prom.then((snaptshot) => {
+		prom.then((snaptshot) => {
 			if (snaptshot.size > 0) {
 				setItems(
 					snaptshot.docs.map((doc) => {
@@ -22,11 +24,11 @@ useEffect(() => {
 				);
 			}
 		});
-    },[categoryId]);
+	}, [categoryId]);
 
-    return (
-        <>
-            <ItemList items={items}/>
-        </>
-    );
+	return (
+		<>
+			<ItemList items={items} />
+		</>
+	);
 }
